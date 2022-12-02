@@ -1,0 +1,233 @@
+.attribution { font-size: 1.2rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root{
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+    --white: hsl(0, 0%, 100%);  
+}
+@font-face {
+    font-family: far;
+    src: url(./Inter-VariableFont_slnt\,wght.ttf);
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: far;
+}
+
+
+
+html{
+    font-size: 62.5%;
+
+}
+body{
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+
+/* =========================
+      |GENERAL STYLINGS|
+========================= */
+
+li{
+    list-style: none;
+}
+.section{
+    padding-inline: 5%;
+}
+button{
+    background-color: transparent;
+    border: none;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.image{
+    position: relative;
+    padding-bottom: 1.2rem;
+    /* bottom: 20%; */
+    left: 0;
+    width: 300px;
+    /* height: 0px; */
+}
+
+/* =========================
+      |CARD HEAD|
+========================= */
+ .container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    max-width: 300px;
+ }
+ .ch-image{
+    position: relative;
+ }
+ .p-curve{
+    z-index: 1;
+    position: absolute;
+    top: -2em;
+ }
+ .bx-shadow{
+    position: absolute;
+    bottom: 15%;
+    left: 35%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* opacity: .05; */
+    background-color: black;
+    
+ }
+ .slide-img{
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    height: 220px;
+    border-radius: .3rem;
+    box-shadow: -35px 70px 50px -65px rgba(0, 0, 0, .60);
+    
+ }
+/* =========================
+      |NAV CHANGE BTN|
+========================= */
+ .change-btn{
+    position: absolute;
+    z-index: 1;
+    bottom: 11%;
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: var(--white);
+    border-radius: 5rem;
+    padding-block: 1rem;
+    padding-inline: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+ }
+.nav-btn{
+    cursor: pointer;
+}
+.prev-btn > img, .next-btn > img{
+    transition: all .3s ease-in-out;
+    width: 9px;
+    padding: .1rem;
+}
+
+.prev-btn > img:hover, .next-btn > img:hover{
+    width: 11px;
+
+}
+
+/* =========================
+      |CARD BODY|
+========================= */
+.card-body{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.quote-bg{
+    position: absolute;
+    top: -18%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+}
+.msg-txt{
+    font-weight: 400;
+    color: var(--Dark-Blue);
+    line-height: 1.4;
+}
+.owner-data{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    gap: .2rem;
+}
+.job{
+    color: var(--Grayish-Blue);
+}
+/* =========================
+      |FOOTER SECTION|
+========================= */
+.curve-bg{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    height: 80px;
+}
+/* =========================
+      |MEDIA QUERY SECTION|
+========================= */
+@media(min-width: 45em){
+    .container{
+        grid-template-columns: 1.2fr 1fr;
+        gap: 0;
+        max-width: 75rem;
+    }
+    .image{
+        width: unset;
+    }
+    .slide-img{
+        height: 250px;
+        left: 42%;
+        transform: translate(-45%, -54%);
+        box-shadow: -40px 70px 45px -60px rgba(0, 0, 0, .60)
+    }
+    .change-btn{
+        bottom: 10%;
+        left: 15%;
+        transform: unset;
+    }
+    .bx-shadow{
+        box-shadow: -40px -25px 30px 35px rgba(0, 0, 0, 25);
+    }
+    /* =========================
+      |CARD BODY SECTION|
+    ========================= */
+    .card-body{
+        order: -1;
+        left: 36%;
+        text-align: left;
+    }
+    .quote-bg{
+        left: 12%;
+        transform: unset;
+    }
+    .msg-txt{
+        max-width: 320px;
+    }
+    .owner-data{
+        flex-direction: row;
+        gap: .5rem;
+    }
+    /* =========================
+      |FOOTER SECTION|
+    ========================= */
+    .curve-bg{
+        width: 400px;
+        height: 120px;
+    }
+}
+
